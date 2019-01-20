@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <link type="text/css" rel="stylesheet" href="assets/style.css" />
+    <script language="JavaScript" src="assets/script.js"></script>
+<body>
+    <form action="" method="get">        
+        <div id="boxes">
+            <div id="windowContainer">
+                <div id="dialog" class="window">
+                    <div class="close"><a href="#" onclick="closePrompt()" class="closeButton">x</a></div>
+                    <p>Ooops, looks like we are having a slight problem.</p>
+                </div>
+            </div>
+            <div id="mask"></div>
+        </div>
+    
+        <div id="container">
+            <div onclick="clearText('txtName')" class="buttonClear">x</div>
+
+            <label class="label">Firstname:</label>
+            <input id="txtName" name="txtName" class="textbox" type="text" onkeyup="writeInput('txtName', 'firstName')" onblur="checkInput('txtName')" />
+            
+            <label class="label">Lastname:</label>
+            <input id="txtSurname" name="txtSurname" class="textbox" type="text" onkeyup="writeInput('txtSurname', 'lastName')" onblur="checkInput('txtSurname')" />
+            
+            <label id="firstName" class="returnlabel" onclick="changeColor()"></label>
+            <label id="lastName" class="returnlabel" onclick="changeColor()"></label>
+            
+            <!--<button id="writeButton" type="button" onclick="writeMessage()">Go</button>-->
+        </div>             
+    </form>
+</body>
+</html>

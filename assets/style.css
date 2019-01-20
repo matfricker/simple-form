@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    font-size: 12px;
+    color: #c4baba;
+}
+
+body, form {
+    height: 100%;
+    width: 100%;
+}
+
+#boxes {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0.9;
+}
+
+#windowContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    z-index: 200;
+}
+
+#boxes .window {
+    position: relative;
+    width: 300px;
+    margin: auto;
+    padding: 10px 31px 10px 10px;
+    z-index: 300;
+    background-color: #000;
+    text-align: center;
+    font-size: 110%;
+    border: solid 1px #ed4dc2;
+    border-radius: 3px;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.close a {
+    display: block;
+    width: 8px;
+    height: 11px;
+    margin: 0;
+    padding: 4px 4px;
+    line-height: 10px;
+    font-weight: bold;
+    color: #ed4dc2;
+    text-decoration: none;
+    border: solid 1px #ed4dc2;
+    border-radius: 3px;
+}
+
+#container {
+    position: relative;
+    width: 256px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    background-color: #CCC;
+    border: solid 2px #fff;
+    border-radius: 5px; 
+}
+
+h1 {
+    font-size: 130%;
+    font-weight: 200;
+    margin: 2px 0;
+    padding: 0;
+    color: #fff;
+}
+
+.textbox, #writeButton {
+    display: inline-block;
+    font-size: 180%;
+    border: solid 1px #c4baba;
+    border-radius: 2px;
+}
+
+.textbox {
+    width: 100%;
+    height: 35px;
+    margin: 0; 
+    padding: 0;
+}
+
+.buttonClear {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 600;
+    color: #ed4dc2;
+    
+}
+
+.buttonClear:hover {
+    cursor: pointer;
+    
+}
+
+#writeButton {
+    height: 37px;
+    width: 60px;
+    margin: 0; padding: 0;
+    background-color: #fff;
+}
+
+p {
+    display: inline-block;
+    margin: 0; 
+    padding: 0;
+}
+
+.label {
+    font-size: 100%;
+    margin: 2px 0;
+    padding: 0;
+    color: #fff;
+    clear: right;
+}
+
+.returnlabel {
+    display: block;
+    margin: 2px 0;
+    padding: 0;
+    color: #000;
+    clear: right;
+}
+
+.label:hover {
+    cursor: pointer;
+}
