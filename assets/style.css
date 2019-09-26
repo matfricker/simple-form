@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     font-family: arial;
-    font-size: 12px;
-    color: #c4baba;
+    font-size: 13px;
+    color: #555;
 }
 
 body, form {
@@ -11,73 +11,51 @@ body, form {
     width: 100%;
 }
 
-#boxes {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
 #mask {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 100;
     background-color: #000;
     opacity: 0.9;
 }
 
-#windowContainer {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    padding-top: 100px;
-    z-index: 200;
+#dialog-container {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
-#boxes .window {
-    position: relative;
+#dialog-container .window {
+    position: absolute;
+    top: 10%;
+    left: 50%;
     width: 300px;
-    margin: auto;
-    padding: 10px 31px 10px 10px;
-    z-index: 300;
-    background-color: #000;
+    margin-left: -160px;
+    padding: 10px;
+    z-index: 200;
+    background-color: #ccc;
     text-align: center;
     font-size: 110%;
-    border: solid 1px #ed4dc2;
+    border: solid 1px #333;
     border-radius: 3px;
 }
 
-.close {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-}
-
-.close a {
-    display: block;
-    width: 8px;
-    height: 11px;
-    margin: 0;
-    padding: 4px 4px;
-    line-height: 10px;
-    font-weight: bold;
-    color: #ed4dc2;
-    text-decoration: none;
-    border: solid 1px #ed4dc2;
-    border-radius: 3px;
-}
-
-#container {
+.container {
     position: relative;
     width: 256px;
     margin: auto;
+}
+
+.main-form {
     margin-top: 30px;
-    padding: 5px;
-    background-color: #CCC;
-    border: solid 2px #fff;
-    border-radius: 5px; 
+    padding: 25px;
+    background-color: #ccc;
+    box-shadow: #aaa 2px 2px 2px;
+    border: none;
+    border-radius: 5px;
 }
 
 h1 {
@@ -88,63 +66,64 @@ h1 {
     color: #fff;
 }
 
-.textbox, #writeButton {
-    display: inline-block;
-    font-size: 180%;
-    border: solid 1px #c4baba;
-    border-radius: 2px;
+.label {
+    display: block;
+    margin: 5px 0 2px;
+    padding: 0;
+    color: #555;
+    text-transform: uppercase;
+}
+
+.message {
+    display: block;
+    margin: 20px 0;
+    padding: 0;
+    color: #ff0000;
 }
 
 .textbox {
+    display: block;
     width: 100%;
-    height: 35px;
-    margin: 0; 
-    padding: 0;
+    font-size: 130%;
+    margin: 0 0 10px;
+    padding: 10px;
+    box-sizing : border-box;
 }
 
-.buttonClear {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 600;
-    color: #ed4dc2;
-    
-}
-
-.buttonClear:hover {
-    cursor: pointer;
-    
-}
-
-#writeButton {
-    height: 37px;
-    width: 60px;
-    margin: 0; padding: 0;
+.button {
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px 5px;
+    color: #555;
+    border: solid 1px #aaa;
+    border-radius: 2px;
+    box-shadow: #aaa 2px 2px 2px;
+    text-align: center;
+    text-transform: uppercase;
     background-color: #fff;
 }
 
-p {
-    display: inline-block;
-    margin: 0; 
-    padding: 0;
-}
-
-.label {
-    font-size: 100%;
-    margin: 2px 0;
-    padding: 0;
-    color: #fff;
-    clear: right;
-}
-
-.returnlabel {
-    display: block;
-    margin: 2px 0;
-    padding: 0;
-    color: #000;
-    clear: right;
-}
-
-.label:hover {
+.button:hover {
     cursor: pointer;
+}
+
+.mt-1 {
+    margin-top: 10px;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.mb-1 {
+    margin-bottom: 10px;
+}
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.form-elements {
+    display: block;
 }

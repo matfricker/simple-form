@@ -1,33 +1,32 @@
 <!DOCTYPE HTML>
 <html>
     <link type="text/css" rel="stylesheet" href="assets/style.css" />
-    <script language="JavaScript" src="assets/script.js"></script>
 <body>
-    <form action="" method="get">        
-        <div id="boxes">
-            <div id="windowContainer">
-                <div id="dialog" class="window">
-                    <div class="close"><a href="#" onclick="closePrompt()" class="closeButton">x</a></div>
-                    <p>Ooops, looks like we are having a slight problem.</p>
-                </div>
+    <form>
+        <div id="dialog-container">
+            <div id="dialog" class="window">
+                <p>Ooops, looks like we are having a slight problem.</p>
+                <button id="close-dialog" class="button">close</button>
             </div>
             <div id="mask"></div>
         </div>
-    
-        <div id="container">
-            <div onclick="clearText('txtName')" class="buttonClear">x</div>
 
-            <label class="label">Firstname:</label>
-            <input id="txtName" name="txtName" class="textbox" type="text" onkeyup="writeInput('txtName', 'firstName')" onblur="checkInput('txtName')" />
-            
-            <label class="label">Lastname:</label>
-            <input id="txtSurname" name="txtSurname" class="textbox" type="text" onkeyup="writeInput('txtSurname', 'lastName')" onblur="checkInput('txtSurname')" />
-            
-            <label id="firstName" class="returnlabel" onclick="changeColor()"></label>
-            <label id="lastName" class="returnlabel" onclick="changeColor()"></label>
-            
-            <!--<button id="writeButton" type="button" onclick="writeMessage()">Go</button>-->
-        </div>             
+        <div class="container main-form">
+            <div class="mb-2">
+                <button id="open-dialog" type="button" class="button">open</button>
+                <button id="clear" type="button" class="button">clear form</button>
+            </div>
+            <div class="form-elements">
+                <label class="label">First Name:</label>
+                <input id="txtFirstName" name="txtFirstName" class="textbox" type="text" />
+                <label class="label">Last Name:</label>
+                <input id="txtLastName" name="txtLastName" class="textbox" type="text" />
+            </div>
+        </div>
+        <div class="container">
+            <label id="message-label" class="message"></label>
+        </div>
     </form>
+    <script language="JavaScript" src="assets/script.js"></script>
 </body>
 </html>

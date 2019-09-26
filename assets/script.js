@@ -1,46 +1,44 @@
-window.onload = function() {
-    var boxes = document.getElementById("boxes");
-    var text = null;
-    var message = null;
-    // Set Focus on first textbox
-    document.getElementById("txtName").focus();
-    
-    draw();
-}
+(function() {
+    'use strict';
 
-function writeInput(textBox, messageLabel) {
-    text = document.getElementById(textBox);
-    message = document.getElementById(messageLabel);
-    message.innerHTML = text.value;
-}
+    var dialogContainer = document.getElementById('dialog-container'),
+        closeDialog = document.getElementById('close-dialog'),
+        firstNameTextBox = document.getElementById('txtFirstName'),
+        lastNameTextBox = document.getElementById('txtLastName'),
+        clear = document.getElementById('clear'),
+        messageLabel = document.getElementById('message-label'),
+        openDialog = document.getElementById('open-dialog');
 
-function checkInput(textBox) {
-    text = document.getElementById(textBox);
-    if (text.value.length == 0) {
-        boxes.style.visibility = "visible";
-    }
-}
+    firstNameTextBox.addEventListener('blur', function () {
+        if (firstNameTextBox.value !== null) {
+            messageLabel.innerHTML += firstNameTextBox.value;
+        }
+    })
 
-function changeColor() {
-    if (message != null) {
-        message.style.color = "#fff";
-    }
-}
+    lastNameTextBox.addEventListener('blur', function () {
+        if (lastNameTextBox.value !== null) {
+            messageLabel.innerHTML += ' ' + lastNameTextBox.value;
+        }
+    })
 
-function closePrompt() {
-    boxes.style.visibility = "hidden";
-}
+    clear.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (firstNameTextBox.value != null || lastNameTextBox.value != null || messageLabel.innerHTML != null) {
+            firstNameTextBox.value = null;
+            lastNameTextBox.value = null;
+            messageLabel.innerHTML = null;
+        }
+    })
 
-function draw() {
-    //var i = 0;
-    //while (i <= 100) {
-    //    document.getElementById("firstName").innerHTML += i + " ";
-    //    i++;
-    //}
-}
+    openDialog.addEventListener('click', function (e) {
+        e.preventDefault(e);
+        dialogContainer.style.visibility = 'visible';
+    })
 
-function clearText(textBox) {
-    alert(textBox);
-    text = document.getElementById(textBox);
-    text.value = "aaa";
-}
+    closeDialog.addEventListener('click', function (e) {
+        e.preventDefault(e);
+        dialogContainer.style.visibility = 'hidden';
+    })
+
+})();
+
