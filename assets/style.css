@@ -88,10 +88,12 @@ h1 {
     margin: 0 0 10px;
     padding: 10px;
     box-sizing : border-box;
+    border: none;
+    border-radius: 2px;
 }
 
 .textbox:focus {
-    outline: solid #222 1px;
+    outline: outset #ff1492 3px;
 }
 
 .button {
@@ -115,7 +117,7 @@ h1 {
 .button:focus {
     outline: none;
     color: #fff;
-    background-color: #222;
+    background-color: #ff1492;
 }
 
 .mt-1 {
