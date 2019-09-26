@@ -90,6 +90,10 @@ h1 {
     box-sizing : border-box;
 }
 
+.textbox:focus {
+    outline: solid #222 1px;
+}
+
 .button {
     display: block;
     width: 100%;
@@ -106,6 +110,12 @@ h1 {
 
 .button:hover {
     cursor: pointer;
+}
+
+.button:focus {
+    outline: none;
+    color: #fff;
+    background-color: #222;
 }
 
 .mt-1 {
