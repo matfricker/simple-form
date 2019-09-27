@@ -66,34 +66,102 @@ h1 {
     color: #fff;
 }
 
-.label {
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 1em;
+    max-width: 400px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    border: solid 1px #003a6b;
+}
+
+.field {
+    position: relative;
     display: block;
-    margin: 5px 0 2px;
-    padding: 0;
-    color: #555;
-    text-transform: uppercase;
+    float: right;
+    padding: 0.8em;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.field:focus {
+    /*outline: outset #003a6b 3px;*/
+    outline: none;
+}
+
+.label {
+    float: right;
+    padding: 0 1em;
+    width: 40%;
+    color: #6a7989;
+    font-weight: bold;
+    font-size: 70.25%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.label-content {
+    position: relative;
+    display: block;
+    padding: 1.6em 0;
+    width: 100%;
+
+    transition: transform 0.3s;
+}
+
+.label::before,
+.label::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    /*
+    height: 4px;
+    background: #003a6b;
+    */
+
+    transition: transform 0.3s;
+}
+
+.label::before {
+	top: 0;
+}
+
+.label::after {
+	bottom: 0;
+}
+
+.field:focus + .label .label-content {
+    transform: translate3d(0, -90%, 0);
+}
+
+.field:focus + .label::before {
+	transform: translate3d(0, -0.5em, 0);
+}
+
+.field:focus + .label::after {
+	transform: translate3d(0, 0.5em, 0);
 }
 
 .message {
     display: block;
     margin: 20px 0;
     padding: 0;
-    color: #ff1492;
-}
-
-.textbox {
-    display: block;
-    width: 100%;
-    font-size: 130%;
-    margin: 0 0 10px;
-    padding: 10px;
-    box-sizing : border-box;
-    border: none;
-    border-radius: 2px;
-}
-
-.textbox:focus {
-    outline: outset #ff1492 3px;
+    color: #003a6b;
 }
 
 .button {
@@ -117,7 +185,7 @@ h1 {
 .button:focus {
     outline: none;
     color: #fff;
-    background-color: #ff1492;
+    background-color: #003a6b;
 }
 
 .mt-1 {

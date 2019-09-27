@@ -2,12 +2,12 @@
     'use strict';
 
     var dialogContainer = document.getElementById('dialog-container'),
+        openDialog = document.getElementById('open-dialog'),
         closeDialog = document.getElementById('close-dialog'),
+        clear = document.getElementById('clear'),
         firstNameTextBox = document.getElementById('txtFirstName'),
         lastNameTextBox = document.getElementById('txtLastName'),
-        clear = document.getElementById('clear'),
-        messageLabel = document.getElementById('message-label'),
-        openDialog = document.getElementById('open-dialog');
+        messageLabel = document.getElementById('message-label');
 
     firstNameTextBox.addEventListener('blur', function () {
         if (firstNameTextBox.value !== null) {
