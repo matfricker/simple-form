@@ -22,7 +22,10 @@
     })
 
     clear.addEventListener('click', function (e) {
-        e.preventDefault();
+        
+        classie.remove( firstNameTextBox.parentNode, 'input-filled' );
+        classie.remove( lastNameTextBox.parentNode, 'input-filled' );
+
         if (firstNameTextBox.value != null || lastNameTextBox.value != null || messageLabel.innerHTML != null) {
             firstNameTextBox.value = null;
             lastNameTextBox.value = null;
